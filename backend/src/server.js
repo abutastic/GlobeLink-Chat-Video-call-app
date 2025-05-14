@@ -1,10 +1,17 @@
 import express from "express";
+import "dotenv/config";
+
+import authRouter from "./routes/auth.routes.js";
+import { connectDB } from "./lib/db.js";
+
 const app = express();
+const PORT = process.env.PORT;
 
-app.get("/", (req, res) => {
-  res.send("Working again");
-});
+app.use(express.json());
 
-app.listen(5007, () => {
-  console.log(`Server is listening on 5007`);
+app.use("/api/auth", authRouter);
+
+app.listen(PORT, () => {
+  console.log(`Server is listening on ${PORT}`);
+  connectDB();
 });

@@ -3,12 +3,7 @@ import useAuthUser from "../hooks/useAuthUser";
 import toast from "react-hot-toast";
 import { completeOnboarding } from "../lib/api";
 import { useState } from "react";
-import {
-  LoaderIcon,
-  MapPinIcon,
-  ShipWheelIcon,
-  ShuffleIcon,
-} from "lucide-react";
+import { LoaderIcon, MapPinIcon, Earth, ShuffleIcon } from "lucide-react";
 import { LANGUAGES } from "../constants";
 
 const OnboardingPage = () => {
@@ -198,7 +193,7 @@ const OnboardingPage = () => {
             >
               {!isPending ? (
                 <>
-                  <ShipWheelIcon className="size-5 mr-2" />
+                  <Earth className="size-5 mr-2" />
                   Complete Onboarding
                 </>
               ) : (

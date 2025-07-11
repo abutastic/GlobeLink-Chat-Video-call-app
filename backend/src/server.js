@@ -28,7 +28,7 @@ app.use("/api/users", userRouter);
 app.use("/api/chat", chatRouter);
 
 if (process.env.NODE_ENV === "production") {
-  // dist folder is now our static asset
+  // dist folder is now our static asset.
   app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
   app.get("*", (req, res) => {
